@@ -31,6 +31,7 @@ module.exports = function(app){
             //wirte the new array containing the new note to the data file
             fs.writeFile("db/db.json", JSON.stringify(data), function(err){
                 if (err) throw err;
+                res.end(console.log("note added"));
             });
             //res.send(data);
         });
