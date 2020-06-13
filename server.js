@@ -19,6 +19,10 @@ app.listen(PORT, function(){
 //add middleware
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
+app.use(express.static("public")); 
+
+//routes
+require("./routes/htmlRoutes.js")(app)
 
 
 
