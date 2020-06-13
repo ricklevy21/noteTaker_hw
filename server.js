@@ -23,6 +23,8 @@ app.use(express.static("public"));
 
 //routes
 require("./routes/htmlRoutes.js")(app)
+require("./routes/apiRoutes.js")(app)
+
 
 
 
