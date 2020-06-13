@@ -33,7 +33,7 @@ module.exports = function(app){
                 if (err) throw err;
                 res.end(console.log("note added"));
             });
-            //res.send(data);
+            res.send(data);
         });
     });
 
@@ -54,7 +54,7 @@ module.exports = function(app){
             res.end(console.log("note deleted"));
           })
         });
-        //res.send(data);
+        res.send(data);
   
       });
 
