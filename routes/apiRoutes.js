@@ -50,7 +50,7 @@ module.exports = function(app){
           }); 
           fs.writeFile("db/db.json", JSON.stringify(noteData), function(err){
             if (err) throw err;
-            res.end(console.log("Deleted Successfully"));
+            
           })
         });
         //res.send(data);
