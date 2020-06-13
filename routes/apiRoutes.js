@@ -8,8 +8,10 @@ var data = require("../db/db.json")
 module.exports = function(app){
     //GET method route
     app.get("/api/notes", function(req, res){
-        res.send(data);
-    });
+        fs.readFile("db/db.json", "utf8", function(err,data) {
+            res.json(JSON.parse(data));
+          });
+        });
 
     //POST method route
     app.post("/api/notes", function(req, res){
