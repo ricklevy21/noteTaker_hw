@@ -1,6 +1,7 @@
 //LOAD DATA
 const fs = require ("fs");
-var data = require("../db/db.json")
+const data = require("../db/db.json")
+const { v4: uuidv4 } = require('uuid');
 
 //-------------------------------------------
 //ROUTING
@@ -18,7 +19,7 @@ module.exports = function(app){
         //set the value of the new note to equal the body of the request
         var newNote = req.body;
         //add an id (that is equal to the length of the array of notes) to the note object
-        newNote.id = data.length
+        newNote.id = uuidv4();
         console.log(data)
         //read the data file that contains the notes
         fs.readFile("db/db.json", "utf8", function(err, data){
@@ -33,7 +34,6 @@ module.exports = function(app){
                 if (err) throw err;
                 res.end(console.log("note added"));
             });
-            res.send(data);
         });
     });
 
@@ -54,7 +54,6 @@ module.exports = function(app){
             res.end(console.log("note deleted"));
           })
         });
-        res.send(data);
   
       });
 
